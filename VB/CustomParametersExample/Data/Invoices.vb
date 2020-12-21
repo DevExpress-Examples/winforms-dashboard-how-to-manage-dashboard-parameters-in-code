@@ -2,379 +2,379 @@
 Imports System.Collections.Generic
 
 Namespace CustomParametersExample
-    Public Class Invoices
-        Private Shared rnd As New Random()
-        Public Property Country() As String
-        Public Property City() As String
-        Public Property ProductName() As String
-        Public Property OrderDate() As Date
-        Public Property Quantity() As Integer
-        Public Property Discount() As Double
-        Public Property ExtendedPrice() As Double
-        Public Property Freigth() As Double
-        Public Property UnitPrice() As Double
+	Public Class Invoices
+		Private Shared rnd As New Random()
+		Public Property Country() As String
+		Public Property City() As String
+		Public Property ProductName() As String
+		Public Property OrderDate() As DateTime
+		Public Property Quantity() As Integer
+		Public Property Discount() As Double
+		Public Property ExtendedPrice() As Double
+		Public Property Freigth() As Double
+		Public Property UnitPrice() As Double
 
-        Public Shared Function CreateData() As List(Of Invoices)
-            Dim data As New List(Of Invoices)()
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Aachen", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 30, _
-                .Discount = 0, _
-                .ExtendedPrice = 1650, _
-                .Freigth = 149.47, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Berlin", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 15, _
-                .Discount = 0, _
-                .ExtendedPrice = 825, _
-                .Freigth = 69.53, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Brandenburg", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 61, _
-                .Discount = 0, _
-                .ExtendedPrice = 2959, _
-                .Freigth = 42.33, _
-                .UnitPrice = 99 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Brandenburg", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 24, _
-                .Discount = 0, _
-                .ExtendedPrice = 1320, _
-                .Freigth = 29.59, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Cunewalde", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 55, _
-                .Discount = 0.1, _
-                .ExtendedPrice = 1346.4, _
-                .Freigth = 183.17, _
-                .UnitPrice = 27.2 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Cunewalde", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 139, _
-                .Discount = 0.2, _
-                .ExtendedPrice = 4204.1, _
-                .Freigth = 568.62, _
-                .UnitPrice = 68 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Cunewalde", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 49, _
-                .Discount = 0.25, _
-                .ExtendedPrice = 1249.5, _
-                .Freigth = 31.89, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Cunewalde", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 70, _
-                .Discount = 0, _
-                .ExtendedPrice = 3850, _
-                .Freigth = 401.88, _
-                .UnitPrice = 110 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Frankfurt a.M.", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 20, _
-                .Discount = 0.25, _
-                .ExtendedPrice = 408, _
-                .Freigth = 76.56, _
-                .UnitPrice = 27.2 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Frankfurt a.M.", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 35, _
-                .Discount = 0.25, _
-                .ExtendedPrice = 892.5, _
-                .Freigth = 58.88, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Frankfurt a.M.", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 25, _
-                .Discount = 0, _
-                .ExtendedPrice = 1375, _
-                .Freigth = 91.28, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Cologne", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 30, _
-                .Discount = 0, _
-                .ExtendedPrice = 1020, _
-                .Freigth = 145.63, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Leipzig", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 12, _
-                .Discount = 0, _
-                .ExtendedPrice = 660, _
-                .Freigth = 127.34, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Mannheim", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 21, _
-                .Discount = 0, _
-                .ExtendedPrice = 714, _
-                .Freigth = 31.14, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Munich", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 70, _
-                .Discount = 0.15, _
-                .ExtendedPrice = 2618, _
-                .Freigth = 208.58, _
-                .UnitPrice = 44 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Munich", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 30, _
-                .Discount = 0, _
-                .ExtendedPrice = 1320, _
-                .Freigth = 4.93, _
-                .UnitPrice = 44 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Munich", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 20, _
-                .Discount = 0.1, _
-                .ExtendedPrice = 612, _
-                .Freigth = 93.25, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "Germany", _
-                .City = "Munich", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 36, _
-                .Discount = 0.05, _
-                .ExtendedPrice = 1162.8, _
-                .Freigth = 242.95, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Albuquerque", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 60, _
-                .Discount = 0, _
-                .ExtendedPrice = 2640, _
-                .Freigth = 708.95, _
-                .UnitPrice = 44 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Albuquerque", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 21, _
-                .Discount = 0, _
-                .ExtendedPrice = 571.2, _
-                .Freigth = 147.26, _
-                .UnitPrice = 27.2 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Albuquerque", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 2, _
-                .Discount = 0.06, _
-                .ExtendedPrice = 63.92, _
-                .Freigth = 8.53, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Anchorage", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 8, _
-                .Discount = 0, _
-                .ExtendedPrice = 440, _
-                .Freigth = 135.63, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Boise", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 40, _
-                .Discount = 0.15, _
-                .ExtendedPrice = 1496, _
-                .Freigth = 214.27, _
-                .UnitPrice = 44 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Boise", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 7, _
-                .Discount = 0, _
-                .ExtendedPrice = 385, _
-                .Freigth = 8.19, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Boise", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 100, _
-                .Discount = 0.25, _
-                .ExtendedPrice = 4125, _
-                .Freigth = 830.75, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Boise", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 70, _
-                .Discount = 0, _
-                .ExtendedPrice = 2380, _
-                .Freigth = 896.77, _
-                .UnitPrice = 68 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Boise", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 45, _
-                .Discount = 0.2, _
-                .ExtendedPrice = 1224, _
-                .Freigth = 487.57, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Eugene", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 30, _
-                .Discount = 0.15, _
-                .ExtendedPrice = 1402.5, _
-                .Freigth = 18.53, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Eugene", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 15, _
-                .Discount = 0, _
-                .ExtendedPrice = 510, _
-                .Freigth = 14.01, _
-                .UnitPrice = 34 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Lander", _
-                .ProductName = "Camembert Pierrot", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 20, _
-                .Discount = 0.2, _
-                .ExtendedPrice = 435.2, _
-                .Freigth = 30.96, _
-                .UnitPrice = 27.2 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Portland", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 1, _
-                .Discount = 0, _
-                .ExtendedPrice = 55, _
-                .Freigth = 26.31, _
-                .UnitPrice = 55 _
-            })
-            data.Add(New Invoices With { _
-                .Country = "USA", _
-                .City = "Seattle", _
-                .ProductName = "Raclette Courdavault", _
-                .OrderDate = GenerateOrderDate(), _
-                .Quantity = 30, _
-                .Discount = 0, _
-                .ExtendedPrice = 1650, _
-                .Freigth = 606.19, _
-                .UnitPrice = 55 _
-            })
-            Return data
-        End Function
+		Public Shared Function CreateData() As List(Of Invoices)
+			Dim data As New List(Of Invoices)()
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Aachen",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 30,
+				.Discount = 0,
+				.ExtendedPrice = 1650,
+				.Freigth = 149.47,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Berlin",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 15,
+				.Discount = 0,
+				.ExtendedPrice = 825,
+				.Freigth = 69.53,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Brandenburg",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 61,
+				.Discount = 0,
+				.ExtendedPrice = 2959,
+				.Freigth = 42.33,
+				.UnitPrice = 99
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Brandenburg",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 24,
+				.Discount = 0,
+				.ExtendedPrice = 1320,
+				.Freigth = 29.59,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Cunewalde",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 55,
+				.Discount = 0.1,
+				.ExtendedPrice = 1346.4,
+				.Freigth = 183.17,
+				.UnitPrice = 27.2
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Cunewalde",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 139,
+				.Discount = 0.2,
+				.ExtendedPrice = 4204.1,
+				.Freigth = 568.62,
+				.UnitPrice = 68
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Cunewalde",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 49,
+				.Discount = 0.25,
+				.ExtendedPrice = 1249.5,
+				.Freigth = 31.89,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Cunewalde",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 70,
+				.Discount = 0,
+				.ExtendedPrice = 3850,
+				.Freigth = 401.88,
+				.UnitPrice = 110
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Frankfurt a.M.",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 20,
+				.Discount = 0.25,
+				.ExtendedPrice = 408,
+				.Freigth = 76.56,
+				.UnitPrice = 27.2
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Frankfurt a.M.",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 35,
+				.Discount = 0.25,
+				.ExtendedPrice = 892.5,
+				.Freigth = 58.88,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Frankfurt a.M.",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 25,
+				.Discount = 0,
+				.ExtendedPrice = 1375,
+				.Freigth = 91.28,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Cologne",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 30,
+				.Discount = 0,
+				.ExtendedPrice = 1020,
+				.Freigth = 145.63,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Leipzig",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 12,
+				.Discount = 0,
+				.ExtendedPrice = 660,
+				.Freigth = 127.34,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Mannheim",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 21,
+				.Discount = 0,
+				.ExtendedPrice = 714,
+				.Freigth = 31.14,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Munich",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 70,
+				.Discount = 0.15,
+				.ExtendedPrice = 2618,
+				.Freigth = 208.58,
+				.UnitPrice = 44
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Munich",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 30,
+				.Discount = 0,
+				.ExtendedPrice = 1320,
+				.Freigth = 4.93,
+				.UnitPrice = 44
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Munich",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 20,
+				.Discount = 0.1,
+				.ExtendedPrice = 612,
+				.Freigth = 93.25,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "Germany",
+				.City = "Munich",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 36,
+				.Discount = 0.05,
+				.ExtendedPrice = 1162.8,
+				.Freigth = 242.95,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Albuquerque",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 60,
+				.Discount = 0,
+				.ExtendedPrice = 2640,
+				.Freigth = 708.95,
+				.UnitPrice = 44
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Albuquerque",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 21,
+				.Discount = 0,
+				.ExtendedPrice = 571.2,
+				.Freigth = 147.26,
+				.UnitPrice = 27.2
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Albuquerque",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 2,
+				.Discount = 0.06,
+				.ExtendedPrice = 63.92,
+				.Freigth = 8.53,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Anchorage",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 8,
+				.Discount = 0,
+				.ExtendedPrice = 440,
+				.Freigth = 135.63,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Boise",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 40,
+				.Discount = 0.15,
+				.ExtendedPrice = 1496,
+				.Freigth = 214.27,
+				.UnitPrice = 44
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Boise",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 7,
+				.Discount = 0,
+				.ExtendedPrice = 385,
+				.Freigth = 8.19,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Boise",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 100,
+				.Discount = 0.25,
+				.ExtendedPrice = 4125,
+				.Freigth = 830.75,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Boise",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 70,
+				.Discount = 0,
+				.ExtendedPrice = 2380,
+				.Freigth = 896.77,
+				.UnitPrice = 68
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Boise",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 45,
+				.Discount = 0.2,
+				.ExtendedPrice = 1224,
+				.Freigth = 487.57,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Eugene",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 30,
+				.Discount = 0.15,
+				.ExtendedPrice = 1402.5,
+				.Freigth = 18.53,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Eugene",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 15,
+				.Discount = 0,
+				.ExtendedPrice = 510,
+				.Freigth = 14.01,
+				.UnitPrice = 34
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Lander",
+				.ProductName = "Camembert Pierrot",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 20,
+				.Discount = 0.2,
+				.ExtendedPrice = 435.2,
+				.Freigth = 30.96,
+				.UnitPrice = 27.2
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Portland",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 1,
+				.Discount = 0,
+				.ExtendedPrice = 55,
+				.Freigth = 26.31,
+				.UnitPrice = 55
+			})
+			data.Add(New Invoices With {
+				.Country = "USA",
+				.City = "Seattle",
+				.ProductName = "Raclette Courdavault",
+				.OrderDate = GenerateOrderDate(),
+				.Quantity = 30,
+				.Discount = 0,
+				.ExtendedPrice = 1650,
+				.Freigth = 606.19,
+				.UnitPrice = 55
+			})
+			Return data
+		End Function
 
-        Private Shared Function GenerateOrderDate() As Date
-            Dim startYear As Integer = Date.Today.Year - 3
-            Dim endYear As Integer = Date.Today.Year
-            Return New Date(rnd.Next(startYear, endYear), rnd.Next(1, 13), rnd.Next(1, 29))
-        End Function
-    End Class
+		Private Shared Function GenerateOrderDate() As DateTime
+			Dim startYear As Integer = DateTime.Today.Year - 3
+			Dim endYear As Integer = DateTime.Today.Year
+			Return New DateTime(rnd.Next(startYear, endYear), rnd.Next(1, 13), rnd.Next(1, 29))
+		End Function
+	End Class
 End Namespace
