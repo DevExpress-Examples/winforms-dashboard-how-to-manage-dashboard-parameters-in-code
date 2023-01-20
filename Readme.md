@@ -3,12 +3,6 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T635871)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [ViewerForm1.cs](./CS/CustomParametersExample/ViewerForm1.cs) (VB: [ViewerForm1.vb](./VB/CustomParametersExample/ViewerForm1.vb))
-<!-- default file list end -->
-
 # WinForms Dashboard - How to manage dashboard parameters in code 
 
 The following example shows how to override an initial or user-defined [dashboard parameter](https://docs.devexpress.com/Dashboard/16135/creating-dashboards/creating-dashboards-in-the-winforms-designer/data-analysis/using-dashboard-parameters) value when you handle the [CustomParameters](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomParameters) event.
@@ -40,8 +34,11 @@ Private Sub DashboardViewer_CustomParameters(ByVal sender As Object, ByVal e As 
 	End If
 End Sub
 ```
-
 ![](/media/8133e08d-3d51-483d-920f-44f642b751cb.png)
+
+## Files to Review:
+
+* [ViewerForm1.cs](./CS/CustomParametersExample/ViewerForm1.cs) (VB: [ViewerForm1.vb](./VB/CustomParametersExample/ViewerForm1.vb))
 
 ## Documentation
 
