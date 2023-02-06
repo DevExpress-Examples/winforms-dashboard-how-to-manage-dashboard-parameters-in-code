@@ -12,12 +12,12 @@ Namespace CustomParametersExample
             InitializeComponent()
             AddHandler dashboardViewer.CustomParameters, AddressOf DashboardViewer_CustomParameters
             dashboardViewer.DashboardSource = GetType(SampleDashboard)
-            AddParameter(dashboardViewer.Dashboard)
+			dashboardViewer.Dashboard.Parameters.Add(CreateParameter())
             dashboardViewer.Dashboard.DataSources(0).Filter = "[State] In (?parameterState)"
             dashboardViewer.ReloadData()
         End Sub
 
-        Private Sub AddParameter(ByVal dBoard As Dashboard)
+		Private Function CreateParameter() As DashboardParameter
             Dim myDashboardParameter As DashboardParameter = New DashboardParameter()
             Dim staticListLookUpSettings1 As StaticListLookUpSettings = New StaticListLookUpSettings()
             myDashboardParameter.AllowMultiselect = True
@@ -28,7 +28,8 @@ Namespace CustomParametersExample
             myDashboardParameter.Type = GetType(String)
             ' Default parameter value.
             myDashboardParameter.Value = New List(Of String) From {"Ohio", "Utah"}
-            dBoard.Parameters.Add(myDashboardParameter)
+
+			Return myDashboardParameter
         End Sub
 
         Private Sub DashboardViewer_CustomParameters(ByVal sender As Object, ByVal e As CustomParametersEventArgs)
