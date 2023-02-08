@@ -3,13 +3,12 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T635871)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# WinForms Dashboard - How to manage dashboard parameters in code 
+# Dashboard for WinForms - How to manage dashboard parameters in code 
 
-The following example shows how to override an initial or user-defined [dashboard parameter](https://docs.devexpress.com/Dashboard/16135/creating-dashboards/creating-dashboards-in-the-winforms-designer/data-analysis/using-dashboard-parameters) value when you handle the [CustomParameters](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomParameters) event.
+This example shows how to change a default or user-defined [dashboard parameter](https://docs.devexpress.com/Dashboard/16169) value in the [`DashboardViewer.CustomParameters`](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomParameters) event handler. The effective parameter value is hidden from users. Set the [`Visible`](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardParameter.Visible) property to `false` to hide the parameter from the **Dashboard Parameters** dialog.
 
-The effective parameter value is hidden from a user, and if you set the [DashboardParameter.Visible](https://docs.devexpress.com/Dashboard/DevExpress.DashboardCommon.DashboardParameter.Visible) property to _false_, the parameter will be hidden, too.
-
-A parameter named _parameterState_ is added to the dashboard in code. It has a default value and a list of values to show in a look-up editor. A [Dashboard Parameters dialog](https://docs.devexpress.com/Dashboard/17632/winforms-dashboard/winforms-viewer/manage-dashboard-parameters) displays the values and allows a user to select a parameter value in the list. When you handle the **CustomParameters** event, you can validate the parameter value and ignore the value selected by the user. Use the _parameterState_ parameter to filter source data and change its value at runtime in the **CustomParameters** event handler, because the **CustomParameters** event occurs before the dashboard sends a query to a database. That means that only the value passed in the **CustomParameters** event is in effect.
+In this example, the **parameterState** dashboard parameter with static look-up settings is added to the dashboard. This dashboard parameter is used to filter the data source. The [Dashboard Parameters](https://docs.devexpress.com/Dashboard/17632) dialog displays the values and enables users to select a parameter value from the list. In the [`DashboardViewer.CustomParameters`](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWin.DashboardViewer.CustomParameters)) event handler, we can change the value supplied by the user before it is passed to the query.
+In the result, the value defined in the `DashboardViewer.CustomParameters` event is in effect.
 
 **C#**
 
