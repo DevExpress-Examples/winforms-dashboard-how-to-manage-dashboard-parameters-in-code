@@ -35,7 +35,7 @@ End Sub
 ```
 ![](/media/8133e08d-3d51-483d-920f-44f642b751cb.png)
 
-## Files to Review:
+## Files to Review
 
 * [ViewerForm1.cs](./CS/CustomParametersExample/ViewerForm1.cs) (VB: [ViewerForm1.vb](./VB/CustomParametersExample/ViewerForm1.vb))
 
